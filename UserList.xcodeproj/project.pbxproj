@@ -23,6 +23,8 @@
 		AC82320C2CC2556100BE7D17 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82320B2CC2556100BE7D17 /* ToolbarView.swift */; };
 		AC82320E2CC2564900BE7D17 /* UserGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82320D2CC2564900BE7D17 /* UserGridItemView.swift */; };
 		AC8232102CC256C700BE7D17 /* UserGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82320F2CC256C700BE7D17 /* UserGridView.swift */; };
+		AC8232122CC2579100BE7D17 /* UserRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8232112CC2579100BE7D17 /* UserRowItemView.swift */; };
+		AC8232142CC2587E00BE7D17 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8232132CC2587E00BE7D17 /* UserRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		AC82320B2CC2556100BE7D17 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		AC82320D2CC2564900BE7D17 /* UserGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGridItemView.swift; sourceTree = "<group>"; };
 		AC82320F2CC256C700BE7D17 /* UserGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGridView.swift; sourceTree = "<group>"; };
+		AC8232112CC2579100BE7D17 /* UserRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowItemView.swift; sourceTree = "<group>"; };
+		AC8232132CC2587E00BE7D17 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 				AC82320B2CC2556100BE7D17 /* ToolbarView.swift */,
 				AC82320D2CC2564900BE7D17 /* UserGridItemView.swift */,
 				AC82320F2CC256C700BE7D17 /* UserGridView.swift */,
+				AC8232112CC2579100BE7D17 /* UserRowItemView.swift */,
+				AC8232132CC2587E00BE7D17 /* UserRowView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -256,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8232142CC2587E00BE7D17 /* UserRowView.swift in Sources */,
 				2FF9D91D2ACB3D8800F3A6C5 /* HTTPMethod.swift in Sources */,
 				AC8232072CC24DCC00BE7D17 /* ViewModel.swift in Sources */,
 				2FF9D91B2ACB3CE600F3A6C5 /* URLRequest.swift in Sources */,
@@ -266,6 +273,7 @@
 				2F804AE22ACC976300A46A03 /* UserDetailView.swift in Sources */,
 				AC82320C2CC2556100BE7D17 /* ToolbarView.swift in Sources */,
 				2FF9D91F2ACB3DD400F3A6C5 /* UserListRepository.swift in Sources */,
+				AC8232122CC2579100BE7D17 /* UserRowItemView.swift in Sources */,
 				2FFB64282AC6D255007F2F80 /* UserListApp.swift in Sources */,
 				2FEF0C712ACB45E3004DB87C /* User.swift in Sources */,
 			);

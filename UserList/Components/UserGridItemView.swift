@@ -31,6 +31,6 @@ struct UserGridItemView: View {
     }
 }
 
-//#Preview {
-//    UserGridItemView()
-//}
+#Preview {
+    UserListView()
+}
