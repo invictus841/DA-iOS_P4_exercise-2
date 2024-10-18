@@ -20,6 +20,9 @@
 		2FFB642C2AC6D256007F2F80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FFB642B2AC6D256007F2F80 /* Assets.xcassets */; };
 		AC8232072CC24DCC00BE7D17 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8232062CC24DCC00BE7D17 /* ViewModel.swift */; };
 		AC8232092CC2524900BE7D17 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8232082CC2524900BE7D17 /* ViewModelTests.swift */; };
+		AC82320C2CC2556100BE7D17 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82320B2CC2556100BE7D17 /* ToolbarView.swift */; };
+		AC82320E2CC2564900BE7D17 /* UserGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82320D2CC2564900BE7D17 /* UserGridItemView.swift */; };
+		AC8232102CC256C700BE7D17 /* UserGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82320F2CC256C700BE7D17 /* UserGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		2FFB64342AC6D256007F2F80 /* UserListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8232062CC24DCC00BE7D17 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AC8232082CC2524900BE7D17 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		AC82320B2CC2556100BE7D17 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		AC82320D2CC2564900BE7D17 /* UserGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGridItemView.swift; sourceTree = "<group>"; };
+		AC82320F2CC256C700BE7D17 /* UserGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 		2FFB64262AC6D255007F2F80 /* UserList */ = {
 			isa = PBXGroup;
 			children = (
+				AC82320A2CC2554300BE7D17 /* Components */,
 				2FF9D9172ACB3C0B00F3A6C5 /* Sources */,
 				2FF9D9182ACB3C1000F3A6C5 /* Resources */,
 				AC8232062CC24DCC00BE7D17 /* ViewModel.swift */,
@@ -137,6 +144,16 @@
 				AC8232082CC2524900BE7D17 /* ViewModelTests.swift */,
 			);
 			path = UserListTests;
+			sourceTree = "<group>";
+		};
+		AC82320A2CC2554300BE7D17 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AC82320B2CC2556100BE7D17 /* ToolbarView.swift */,
+				AC82320D2CC2564900BE7D17 /* UserGridItemView.swift */,
+				AC82320F2CC256C700BE7D17 /* UserGridView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,7 +261,10 @@
 				2FF9D91B2ACB3CE600F3A6C5 /* URLRequest.swift in Sources */,
 				2FFB642A2AC6D255007F2F80 /* UserListView.swift in Sources */,
 				2FEF0C6F2ACB416C004DB87C /* UserListResponse.swift in Sources */,
+				AC8232102CC256C700BE7D17 /* UserGridView.swift in Sources */,
+				AC82320E2CC2564900BE7D17 /* UserGridItemView.swift in Sources */,
 				2F804AE22ACC976300A46A03 /* UserDetailView.swift in Sources */,
+				AC82320C2CC2556100BE7D17 /* ToolbarView.swift in Sources */,
 				2FF9D91F2ACB3DD400F3A6C5 /* UserListRepository.swift in Sources */,
 				2FFB64282AC6D255007F2F80 /* UserListApp.swift in Sources */,
 				2FEF0C712ACB45E3004DB87C /* User.swift in Sources */,
