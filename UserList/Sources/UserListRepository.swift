@@ -1,6 +1,10 @@
 import Foundation
 
-struct UserListRepository {
+protocol ListRepository {
+    func fetchUsers(quantity: Int) async throws -> [User]
+}
+
+struct UserListRepository : ListRepository {
 
     private let executeDataRequest: (URLRequest) async throws -> (Data, URLResponse)
 

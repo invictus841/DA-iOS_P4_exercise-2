@@ -14,7 +14,11 @@ class ViewModel: ObservableObject {
     @Published var isGridView = false
     
     // TODO: - The property should be declared in the viewModel
-    let repository = UserListRepository()
+    let repository : ListRepository
+    
+    init(repository: ListRepository = UserListRepository()) {
+        self.repository = repository
+    }
     
     // TODO: - Should be a viewModel's input
     func fetchUsers() {
