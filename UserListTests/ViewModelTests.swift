@@ -9,20 +9,26 @@ import XCTest
 import Testing
 @testable import UserList
 
-struct ViewModelTests {
+class ViewModelTests: XCTestCase {
 
 
     class FakeListRepository: ListRepository {
         var fetchUsersCallCount: Int = 0
+        var result: Result<[User], Error>
+        
+        init(result: Result<[User], Error> = .success([])) {
+            self.result = result
+        }
+        
         
         func fetchUsers(quantity: Int) async throws -> [User] {
             fetchUsersCallCount += 1
             
-            return []
+            return try result.get()
         }
     }
     
-    @Test func testProperties_whenInitialized_areSet() {
+     func testProperties_whenInitialized_areSet() {
         
         let repository = FakeListRepository()
     
@@ -38,7 +44,7 @@ struct ViewModelTests {
         XCTAssertFalse(sut.isLoading)
     }
     
-    @Test func testReloadUsers() {
+    func testReloadUsers() async {
         
         
         let repository = FakeListRepository()
@@ -47,13 +53,13 @@ struct ViewModelTests {
         // Ce qu'on teste
         let sut = ViewModel(repository: repository)
         
-        sut.reloadUsers()
+        await sut.reloadUsers()
         
         XCTAssertTrue(sut.users.isEmpty)
         XCTAssertEqual(repository.fetchUsersCallCount, 1)
     }
     
-    @Test func testShouldLoadMoreData_WithLastItem() {
+     func testShouldLoadMoreData_WithLastItem() {
         
         let repository = FakeListRepository()
         let sut = ViewModel(repository: repository)
@@ -77,7 +83,7 @@ struct ViewModelTests {
         XCTAssertTrue(result)
     }
     
-    @Test func testShouldLoadMoreData_WithNotLastItem() {
+   func testShouldLoadMoreData_WithNotLastItem() {
         
         let repository = FakeListRepository()
         let sut = ViewModel(repository: repository)
@@ -101,5 +107,34 @@ struct ViewModelTests {
         XCTAssertFalse(result)
     }
         
+    
+    func testShouldLoadMoreData_EmptyUsers() {
+        
+        let repository = FakeListRepository()
+        let sut = ViewModel(repository: repository)
+        
+        let testUser = User(user: UserListResponse.User(
+            name: UserListResponse.User.Name(title: "Mrs", first: "Jane", last: "Doe"),
+            dob: UserListResponse.User.Dob(date: "1992-01-01", age: 20),
+            picture: UserListResponse.User.Picture(large: "url", medium: "url", thumbnail: "url")
+        ))
+        
+        sut.users = []
+        
+        let result = sut.shouldLoadMoreData(currentItem: testUser)
+        
+        XCTAssertFalse(result)
+    }
+    
+    func testShouldNotFetch_Error() async {
+        
+        let repository = FakeListRepository(result: .failure(NSError()))
+        let sut = ViewModel(repository: repository)
+        
+        
+        await sut.fetchUsers()
+        
+        XCTAssertTrue(sut.isError)
+    }
     
 }

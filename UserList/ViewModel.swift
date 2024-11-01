@@ -12,6 +12,7 @@ class ViewModel: ObservableObject {
     @Published var users: [User] = []
     @Published var isLoading = false
     @Published var isGridView = false
+    @Published var isError = false
     
     // TODO: - The property should be declared in the viewModel
     let repository : ListRepository
@@ -21,17 +22,20 @@ class ViewModel: ObservableObject {
     }
     
     // TODO: - Should be a viewModel's input
-    func fetchUsers() {
+    
+    @MainActor
+    func fetchUsers() async {
         isLoading = true
-        Task {
+         
             do {
                 let users = try await repository.fetchUsers(quantity: 20)
                 self.users.append(contentsOf: users)
                 isLoading = false
             } catch {
-                print("Error fetching users: \(error.localizedDescription)")
+//                print("Error fetching users: \(error.localizedDescription)")
+                isError = true
             }
-        }
+        
     }
 
     // TODO: - Should be an OutPut
@@ -41,8 +45,8 @@ class ViewModel: ObservableObject {
     }
 
     // TODO: - Should be a viewModel's input
-    func reloadUsers() {
+    func reloadUsers() async {
         users.removeAll()
-        fetchUsers()
+        await fetchUsers()
     }
 }

@@ -15,9 +15,9 @@ struct UserRowView: View {
             NavigationLink(destination: UserDetailView(user: user)) {
                 UserRowItemView(user: user)
             }
-            .onAppear {
+            .task {
                 if viewModel.shouldLoadMoreData(currentItem: user) {
-                    viewModel.fetchUsers()
+                    await viewModel.fetchUsers()
                 }
             }
         }

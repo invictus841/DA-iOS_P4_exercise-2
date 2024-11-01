@@ -17,9 +17,9 @@ struct UserGridView: View {
                     NavigationLink(destination: UserDetailView(user: user)) {
                         UserGridItemView(user: user)
                     }
-                    .onAppear {
+                    .task {
                         if viewModel.shouldLoadMoreData(currentItem: user) {
-                            viewModel.fetchUsers()
+                            await viewModel.fetchUsers()
                         }
                     }
                 }
